@@ -1,0 +1,42 @@
+scalar GraphQLDate
+
+type Rec
+{
+    _id: ID!
+    id : Int!
+    name: String!
+    number: String!
+    timestamp: GraphQLDate!
+}
+
+
+
+input recInputs
+{
+    id: Int
+    name: String!
+    number: String!
+    timestamp : GraphQLDate
+}
+
+input recInd
+{
+    id:Int!
+}
+
+
+type Query
+{
+    recList: [Rec!]!
+}
+
+
+
+type Mutation
+{
+    setMessage(message: String!):String
+    recAdd(field: recInputs): Rec!
+    recDel(field: recInd): Rec!
+}
+
+

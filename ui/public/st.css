@@ -1,0 +1,24 @@
+body
+{
+    background-color: brown;
+}
+
+h1
+{
+    color: black;
+    font-style: italic;
+}
+
+
+
+button
+{
+    border-radius: 20px;
+}
+
+.abc
+{
+    display: flex;
+    flex-direction: row;
+}
+
