@@ -1,0 +1,13 @@
+•	Go to IT5007 Directory
+•	Start Mongo database with this command in the terminal. 
+“/usr/bin/mongod --config /etc/mongod.conf &”
+•	Go to api with -  “cd api” command in the terminal 
+•	For initializing the database and the collection – run “ node trymongo.js”
+The 4 operations along with the results will be printed in the console. (in api folder)
+•	If you want the database to be contain 2 sample records before we go to the application run 
+“mongo listTracker init.mongo.js”  (in api folder)
+•	Now to start the api server type: “ npm start” . (in api folder)
+•	Open another shell and go to “ cd IT5007/ui “
+•	Compile the JSX File. Run the command “npm run compile”
+•	Start the UI server with the command: “npm start”
+Open browser and go to http://localhost:8000/ to access the application. 
