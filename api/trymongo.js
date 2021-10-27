@@ -12,25 +12,42 @@ async function testWithAsync() {
         const db = client.db();
         const collection = db.collection('listTracker');
 
-        const data = { id: 10, number: '9841113214', name: 'S22nivasan' };
-        const result = await collection.insertOne(data);
-        console.log('Record inserted');
+        console.log()
 
-        const docs = collection.find({ _id: result.insertedId }).toArray();
-        console.log('Result of records', result.insertedId);
+        const final_del = await collection.deleteMany({});
+
+
+        const data = { id: 1, number: '295982958', name: 'Tom' };
+        const data1 = { id: 2, number: '259285929', name: 'Harry' };
+
+        const result = await collection.insertOne(data);
+        console.log('Record inserted', await collection.find({ id: 1 }).toArray());
+
+        const result1 = await collection.insertOne(data1);
+        console.log('Record inserted', await collection.find({ id: 2 }).toArray());
+
+
+        const final_data = await collection.find().toArray();
+        console.log("Data", final_data);
+
 
         const result_del = await collection.deleteMany({ id: 1 });
         console.log("Record with ID 1 Deleted")
 
-        const result_update = await collection.updateOne({ id: 2 }, { $set: { id: 23 } });
-        console.log("Record Updated");
+        const final_data_del = await collection.find().toArray();
+        console.log("Data", final_data_del);
 
 
-        const final_data = await collection.find().toArray();
-        console.log("Final Data", final_data);
+
+        const result_update = await collection.updateOne({ id: 2 }, { $set: { name: "Jack" } });
+        console.log("Record Updated with Name Jack");
 
 
-        const result_del = await collection.deleteMany({});
+        const final_data1 = await collection.find().toArray();
+        console.log("Final Data", final_data1);
+
+
+        const final_del1 = await collection.deleteMany({});
 
     }
 
