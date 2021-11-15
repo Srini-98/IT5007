@@ -72,7 +72,8 @@ async function recList() {
 
 
 async function recAdd(_, { field }) {
-    const l = await db.collection('listTracker').find().count();
+    const arr = await db.collection('listTracker').find().toArray();
+    const l = arr.length;
     field.id = l + 1;
 
     field.timestamp = new Date();
